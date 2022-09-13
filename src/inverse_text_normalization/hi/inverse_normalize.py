@@ -214,7 +214,7 @@ def inverse_normalize_nemo(texts: List[str], verbose=False) -> List[str]:
     res = []
     for input in tqdm(texts):
         try:
-            text = inverse_normalize(input, verbose=verbose)
+            text = inverse_normalize(input, verbose=True)
         except:
             raise Exception
         res.append(text)
