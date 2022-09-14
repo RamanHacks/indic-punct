@@ -71,8 +71,12 @@ def remove_starting_zeros(word, hindi_digits_with_zero):
     if word[0] in currency_handled:
         currency = word[0]
         word = word[1:]
-        
-    if all(v == '0' for v in word) and word != "0": # all the digits in num are zero eg: "00000000"
+    
+    if word == "0" or word == "00" or word == "000":
+        print(word)
+        return word
+    
+    if all(v == '0' for v in word): # all the digits in num are zero eg: "00000000"
         word = ''
 
     elif word[0] in hindi_digits_with_zero and len(word) > 1:
